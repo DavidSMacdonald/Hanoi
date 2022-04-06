@@ -9,6 +9,7 @@ public class Peg {
 
     public Peg(int peg, int num)
     {
+        count = 0;
         pegNum = peg;
         discs = new int[num];
         numDiscs = num;
@@ -21,7 +22,10 @@ public class Peg {
 
     public String toString()
     {
-        String s = "Peg " + pegNum;
+        String s = "Peg " + pegNum + ": ";
+        for (int i = 0; i < count; i ++) {
+            s+= discs[i];
+        }
         return s;
     }
     public boolean addDisc(int whichOne)
@@ -33,6 +37,7 @@ public class Peg {
             count++;
             return true;
         }
+        System.out.println("can't do that");
         return false;
     }
     public int popDisc()
